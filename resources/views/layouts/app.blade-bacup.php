@@ -16,12 +16,12 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.sidebar')
+            @include('layouts.navigation')
 
             <!-- Page Heading -->
             @isset($header)
-                <header  class="sticky -mt-px bg-white shadow -top-px dark:bg-gray-800" {{-- class="bg-white shadow dark:bg-gray-800" --}}>
-                    <div class="max-w-2xl px-4 py-6 mx-auto sm:px-6 lg:px-8">
+                <header class="bg-white dark:bg-gray-800 shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
@@ -29,14 +29,6 @@
 
             <!-- Page Content -->
             <main>
-                {{-- Alert --}}
-                @if (session('success'))
-                <div class="p-4 mt-2 text-sm text-center text-white bg-blue-600 rounded-lg dark:bg-blue-500" role="alert" style="width: 50%; margin-left: 35%;">
-                    <span class="font-bold">Success</span>{{ session('success') }}
-                </div>
-                @endif
-
-                {{-- Alert end --}}
                 {{ $slot }}
             </main>
         </div>
